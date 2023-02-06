@@ -8,7 +8,14 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
+      flash[:warning] = 'Invalid Username or Password'
       redirect_to '/login'
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    flash[:success] = 'Successfully Logged Out!'
+    redirect_to '/login'
   end
 end
