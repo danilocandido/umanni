@@ -1,10 +1,16 @@
 class UsersController < ApplicationController
-  before_action :authorize
+  before_action :authorize, except: %i[new create]
+  load_and_authorize_resource
 
   def index
   end
 
   def new
+  end
+
+  def show
+    User.accessible_by(current_ability)
+    @user = User.find(params[:id])
   end
 
   def create
