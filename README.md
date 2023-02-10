@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# build
 
-Things you may want to cover:
+> cd unanni
 
-* Ruby version
+# run
+> rails s
 
-* System dependencies
+# Gemfile
+new gems included
 
-* Configuration
+- cancancan - to manage permissions
+- Bcrypt -  to manage passwords
+- rspec-rails - DSL language to create ruby specs
+- database_cleaner-active_record - to reset test database in every spec
 
-* Database creation
+# Permissions
+The User model has an enum attribute called `role` (admin, no_admin), the page permissions are inside Ability class, where we can manage which page each type of user can have access
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Specs
+Integration tests
+- SessionsControllers
+- UsersControllers
