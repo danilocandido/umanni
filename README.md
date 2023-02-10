@@ -3,6 +3,8 @@
 # build
 
 > cd unanni
+> rails db:create
+> rails db:migrate
 
 # run
 > rails s
