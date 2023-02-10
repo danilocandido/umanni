@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   scope :most_recent, -> { order(created_at: :desc) }
 
-  validates :full_name, :email, :role, presence: true
+  validates :full_name, :role, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: true
 end

@@ -24,3 +24,4 @@ The User model has an enum attribute called `role` (admin, no_admin), the page p
 Integration tests
 - SessionsControllers
 - UsersControllers
+- User
